@@ -1,0 +1,415 @@
+//сетка внешний файл
+@import "grid-float.scss"; 
+
+//миксины
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+	content: $content;
+	display: $display;
+	position: $pos;
+}
+@mixin push--auto {
+	margin: {
+		left: auto;
+		right: auto;
+	}
+}
+
+//переменные 
+$color-text-base: #fff;
+/* $color-main-decoration: #ffcc00;
+$bg-color-active: #ecec66;
+$bg-main: #fff; */
+
+*, *:after, *:before {
+	box-sizing: border-box;
+	margin: 0;
+	transition: all .1s ease-in;
+}
+
+
+//font-family: 'Aleo', serif;
+//font-family: 'Josefin Sans', sans-serif;
+
+html, body{
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: $color-text-base;
+	line-height: 1.6;
+	height: 100%;	
+	max-height: 100vh;
+}
+
+ul {
+	padding-left: 0;
+	list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+}
+
+a, button, input {
+	outline: none;
+	box-shadow: 0 0 0 2px transparent;
+}
+
+a {
+	background-color: transparent;
+	text-decoration-color: transparent;
+	color: inherit;
+}
+
+.img-responsive {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.container {
+	max-width: 1110px;
+	@include push--auto;
+	padding: 0 15px;
+}
+
+.header {
+	margin-top: 16px;
+	background-color: #fff;
+	background-image: url('../image/header-bg.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 835px;
+	padding-top: 260px;
+	position: relative;
+	text-align: center;
+
+	&__title {
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: 48px;
+		line-height: 1;
+		margin-bottom: 8px;
+	}
+
+	&__lead {
+		letter-spacing: 0.2em;
+		text-transform: capitalize;
+		font-size: 22px;
+		line-height: 1;
+		margin-bottom: 52px;
+	}
+	&__scroll {
+		margin-bottom: 162px;
+	}
+	&__form-search {
+		margin-bottom: 122px;
+	}
+}
+
+.title {
+}
+.lead {
+}
+.form-search {
+}
+
+.scroll {
+	position: relative;
+	font-size: 14px;
+	line-height: 1.9;
+
+	&__arrow {
+		transform: translateX(-100%) rotate(135deg) translateY(-100%);
+		left: 50%;
+		content: "";
+		display: block;
+		position: absolute;
+		cursor: pointer;
+		width: 8px;
+		height: 8px;
+		border-top: 1px solid #fff;
+		border-right: 1px solid #fff;
+		bottom: 0;
+	}
+}
+.nav {
+	background-color: #5474fd;
+	min-height: 80px;
+	display: flex;
+
+	&__container {
+		width: 100%;
+		margin: auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	&__item {}
+}
+.logo {
+	&__link {
+		display: block;
+		font-size: 24px;
+		text-transform: uppercase;
+
+	}
+}
+.main-menu {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: uppercase;
+	font-size: 14px;
+	text-align: center;
+	font-family: 'Aleo', serif;
+
+	&__item {
+
+	}
+
+	&__link {
+		padding: 12px 18px;
+		display: block;
+		position: relative;
+		text-decoration: none;
+		color: inherit;
+
+		&:focus {
+			border-color: #f2ec9c;
+		}
+
+		&:hover{
+			transform: scale(1.05);
+			color: #f9c;
+		}
+
+		&:active {
+			background-color: #547
+		}
+	}
+	&__item-title {}
+}
+
+.form-search {
+	background-color: #fff;
+	padding: 5px;
+	max-width: 650px;
+	min-height: 55px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.search {
+	width: calc(100% - 145px);
+	display: block;
+	border: none;
+	height: 100%;
+	padding: 15px;
+	text-align: center;
+
+	&::placeholder {
+		text-align: center;
+		font-size: 14px;
+		color: #999999;
+	}
+	
+	&__btn {
+		position: absolute;
+		right: 1px;
+		top: 1px;
+		height: calc(100% - 2px);
+		min-width: 144px;
+		font-size: 14px;
+		text-transform: uppercase;
+		justify-content: space-around;
+	}
+}
+
+.btn {
+	font-family: 'Aleo', serif;
+	background-color: #5474fd;
+	padding: 10px 15px;
+	color: #fff;
+	display: inline-flex;
+	align-items: center;
+	border: 2px solid transparent;
+
+	&:focus {
+		border-color: #f2ec9c;
+	}
+
+	&:hover {
+		color: #5474fd;
+		border-color: #5474fd;
+		background-color: #f9c;
+	}			
+
+	&:active {
+		background-color: #547;
+	}
+}
+
+.section-choose-us {
+	background-image: url('../image/choose-bg.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 685px;
+	padding: 120px 0;
+	position: relative;
+}
+
+.choose-descr {
+	padding-top: 80px;
+	&__title {
+		font-family: 'Aleo', serif;
+		font-size: 36px;
+		line-height: 1;
+		margin-bottom: 55px;
+	}
+	&__lead {
+		max-width: 515px;
+		color: #e8e8e8;
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		margin-bottom: 40px;
+	}
+
+	&__btn {
+		min-height: 60px;
+		min-width: 225px;
+		justify-content: center;
+	}
+}
+
+.choose-foto {
+	position: relative;
+	&__img {
+		display: block;
+		position: relative;
+	}
+	&__img--up {
+		margin-bottom: 5px;
+		left: 10%;
+		top: 0;
+	}
+	&__img--down {
+		right: 0;
+	}
+}
+
+.section-choice {
+	background-color: #333;
+	min-height: 336px;
+	padding: 100px 0 110px;
+}
+
+.choice {
+	display: flex;
+	justify-content: space-around;
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__img {
+		width: 60px;
+		height: auto;
+		margin-bottom: 20px;
+
+		&--center {
+			position: relative;
+			&:before,
+			&:after {
+				@include pseudo;
+				width: 300px;
+				height: 60px;
+				border-top: 1px dashed #6c6c6c;
+				border-radius: 30%;
+				top: 0;
+			}
+			&:before {
+				left: 0;
+			}
+			&:after {
+				right: 0;
+			}
+		}
+	}
+
+	&__item-title {
+		color: #e8e8e8;
+		font-size: 36px;
+		font-family: 'Aleo', serif;
+	}
+}
+
+.section-spain-hotel {
+	background-image: url('../image/bg-spain-hotel.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.spain-hotel {
+	min-height: 700px;
+	position: relative;
+	padding-top: 235px;
+
+	&__spain-descr {
+		left: 0;
+	}
+}
+
+.spain-descr {
+	width: 540px;
+	background-color: rgba(35, 35, 35, 0.9);
+	position: absolute;
+	color: #e8e8e8;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	padding: 50px 30px;
+	&__subtitle {
+		margin-bottom: 25px;
+	}
+	&__title {
+		margin-bottom: 25px;
+		text-transform: uppercase;
+	}
+	&__lead {
+		font-size: 16px;
+		margin-bottom: 50px;
+	}
+	&__btn {
+		min-width: 225px;
+		min-height: 60px;
+		justify-content: center;
+	}
+}
+
+.section-spain-sea {
+	background-image: url('../image/bg-spain-sea.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.spain-sea {
+	min-height: 700px;
+	position: relative;
+	padding-top: 235px;
+	&__spain-descr {
+		right: 0;
+	}
+}
