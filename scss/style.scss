@@ -1,7 +1,5 @@
-//сетка внешний файл
-@import "grid-float.scss"; 
 
-//миксины
+//mixins
 @mixin pseudo($display: block, $pos: absolute, $content: ''){
 	content: $content;
 	display: $display;
@@ -14,21 +12,14 @@
 	}
 }
 
-//переменные 
+//variable
 $color-text-base: #fff;
-/* $color-main-decoration: #ffcc00;
-$bg-color-active: #ecec66;
-$bg-main: #fff; */
 
 *, *:after, *:before {
 	box-sizing: border-box;
 	margin: 0;
 	transition: all .1s ease-in;
 }
-
-
-//font-family: 'Aleo', serif;
-//font-family: 'Josefin Sans', sans-serif;
 
 html, body{
 	font-family: 'Josefin Sans', sans-serif;
@@ -67,7 +58,7 @@ a {
 }
 
 .container {
-	max-width: 1110px;
+	max-width: 1140px;
 	@include push--auto;
 	padding: 0 15px;
 }
