@@ -13,7 +13,7 @@
 }
 
 //variable
-$color-text-base: #fff;
+$color-text-base: #ffffff;
 
 *, *:after, *:before {
 	box-sizing: border-box;
@@ -63,9 +63,56 @@ a {
 	padding: 0 15px;
 }
 
+.sr-only {
+	position: absolute;
+	margin: -1px 0 0 -1px;
+	padding: 0;
+	display: block;
+	width: 1px;
+	height: 1px;
+	font-size: 1px;
+	line-height: 1px;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+	outline: 0;
+}
+
+.btn {
+	display: inline-flex;
+	font-family: 'Aleo', serif;
+	font-weight: 400;
+	color: $color-text-base;
+	text-align: center;
+	vertical-align: middle;
+	user-select: none;
+	background-color: #5474fd;
+	padding: .75rem 1rem;
+	font-size: .875rem;
+	line-height: 1.5;
+	align-items: center;
+	border: 2px solid transparent;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	min-width: 225px;
+
+	&:focus {
+		border-color: #f2ec9c;
+	}
+
+	&:hover {
+		color: #5474fd;
+		border-color: #5474fd;
+		background-color: #f9c;
+	}			
+
+	&:active {
+		background-color: #547;
+	}
+}
+
 .header {
 	margin-top: 16px;
-	background-color: #fff;
+	background-color: $color-text-base;
 	background-image: url('../image/header-bg.png');
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -106,11 +153,12 @@ a {
 }
 
 .scroll {
+	display: block;
 	position: relative;
 	font-size: 14px;
 	line-height: 1.9;
 
-	&__arrow {
+	&:before {
 		transform: translateX(-100%) rotate(135deg) translateY(-100%);
 		left: 50%;
 		content: "";
@@ -119,8 +167,8 @@ a {
 		cursor: pointer;
 		width: 8px;
 		height: 8px;
-		border-top: 1px solid #fff;
-		border-right: 1px solid #fff;
+		border-top: 1px solid $color-text-base;
+		border-right: 1px solid $color-text-base;
 		bottom: 0;
 
 		&:hover {
@@ -131,9 +179,9 @@ a {
 .nav {
 	background-color: #5474fd;
 	min-height: 80px;
-	display: flex;
-
-	&__container {
+	
+	&__wrap {
+		display: flex;
 		width: 100%;
 		margin: auto;
 		display: flex;
@@ -142,15 +190,14 @@ a {
 		align-items: center;
 	}
 	
-	&__item {}
+	&__item {
+		padding: 17px 0;
+	}
 }
 .logo {
-	&__link {
-		display: block;
-		font-size: 24px;
-		text-transform: uppercase;
-
-	}
+	display: block;
+	font-size: 24px;
+	text-transform: uppercase;
 }
 .main-menu {
 	display: flex;
@@ -162,13 +209,14 @@ a {
 	font-size: 14px;
 	text-align: center;
 	font-family: 'Aleo', serif;
+	margin-right: -21px;
 
 	&__item {
-
+		
 	}
 
 	&__link {
-		padding: 12px 18px;
+		padding: 14px 21px;
 		display: block;
 		position: relative;
 		text-decoration: none;
@@ -191,7 +239,7 @@ a {
 }
 
 .form-search {
-	background-color: #fff;
+	background-color: $color-text-base;
 	padding: 5px;
 	max-width: 650px;
 	min-height: 55px;
@@ -227,30 +275,6 @@ a {
 	}
 }
 
-.btn {
-	font-family: 'Aleo', serif;
-	background-color: #5474fd;
-	padding: 10px 15px;
-	color: #fff;
-	display: inline-flex;
-	align-items: center;
-	border: 2px solid transparent;
-
-	&:focus {
-		border-color: #f2ec9c;
-	}
-
-	&:hover {
-		color: #5474fd;
-		border-color: #5474fd;
-		background-color: #f9c;
-	}			
-
-	&:active {
-		background-color: #547;
-	}
-}
-
 .section-choose-us {
 	background-image: url('../image/choose-bg.png');
 	background-position: center center;
@@ -265,6 +289,7 @@ a {
 	padding-top: 80px;
 	&__title {
 		font-family: 'Aleo', serif;
+		font-weight: 400;
 		font-size: 36px;
 		line-height: 1;
 		margin-bottom: 55px;
@@ -286,18 +311,20 @@ a {
 }
 
 .choose-foto {
-	position: relative;
+	display: flex;
+	flex-direction: column;
+
 	&__img {
 		display: block;
-		position: relative;
+		width: 350px;
 	}
+
 	&__img--up {
 		margin-bottom: 5px;
-		left: 10%;
-		top: 0;
+		margin-left: 80px;
 	}
 	&__img--down {
-		right: 0;
+		align-self: flex-end;
 	}
 }
 
@@ -315,31 +342,23 @@ a {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		position: relative;
+
+		&:not(:last-child):after {
+			@include pseudo;
+			width: 300px;
+			height: 60px;
+			border-top: 1px dashed #6c6c6c;
+			border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+			top: -33%;
+			left: 66%;
+		}
 	}
 
 	&__img {
 		width: 60px;
 		height: auto;
 		margin-bottom: 20px;
-
-		&--center {
-			position: relative;
-			&:before,
-			&:after {
-				@include pseudo;
-				width: 300px;
-				height: 60px;
-				border-top: 1px dashed #6c6c6c;
-				border-radius: 30%;
-				top: 0;
-			}
-			&:before {
-				left: 0;
-			}
-			&:after {
-				right: 0;
-			}
-		}
 	}
 
 	&__item-title {
@@ -356,20 +375,14 @@ a {
 	background-size: cover;
 }
 
-.spain-hotel {
+.spain-descr {
 	min-height: 700px;
-	position: relative;
 	padding-top: 235px;
-
-	&__spain-descr {
-		left: 0;
-	}
 }
 
-.spain-descr {
+.spain-card {
 	width: 540px;
 	background-color: rgba(35, 35, 35, 0.9);
-	position: absolute;
 	color: #e8e8e8;
 	font-family: 'Josefin Sans', sans-serif;
 	font-size: 20px;
@@ -387,8 +400,6 @@ a {
 		margin-bottom: 50px;
 	}
 	&__btn {
-		min-width: 225px;
-		min-height: 60px;
 		justify-content: center;
 	}
 }
@@ -400,13 +411,8 @@ a {
 	background-size: cover;
 }
 
-.spain-sea {
-	min-height: 700px;
-	position: relative;
-	padding-top: 235px;
-	&__spain-descr {
-		right: 0;
-	}
+.empty-place {
+	height: 1px;
 }
 
 .section-reviews {
@@ -419,7 +425,7 @@ a {
 
 	&__title {
 		text-align: center;
-		color: #fff;
+		color: $color-text-base;
 		font-size: 36px;
 		font-family: 'Aleo', serif;
 		font-weight: 1;
@@ -457,7 +463,7 @@ a {
 	background-color: #232323;
 	min-height: 265px;
 	padding: 110px 0 50px;
-	color: #fff;
+	color: $color-text-base;
 	text-align: center;
 	&__logo {
 		margin-bottom: 10px;
@@ -480,16 +486,16 @@ a {
 		}
 	}
 	&__link {
-    display: -ms-flexbox;
-    display: flex;
-    width: 18px;
-    height: 18px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: solid 2px transparent;
+		display: -ms-flexbox;
+		display: flex;
+		width: 18px;
+		height: 18px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		border: solid 2px transparent;
 		&:focus{
-			border-color: #fff;
+			border-color: $color-text-base;
 		}
 		&:hover {
 			transform: scale(1.5);
