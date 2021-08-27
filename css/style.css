@@ -84,15 +84,30 @@ a {
   -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
-  min-width: 225px; }
+  min-width: 225px;
+  text-transform: uppercase;
+  letter-spacing: 0.075em; }
   .btn:focus {
-    border-color: #f2ec9c; }
+    border-color: #000000; }
   .btn:hover {
     color: #5474fd;
     border-color: #5474fd;
-    background-color: #f9c; }
+    background-color: #ffffff;
+    cursor: pointer; }
   .btn:active {
-    background-color: #547; }
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
+
+.search-icon {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff; }
+  .search-icon:hover, .search-icon:active {
+    fill: #5474fd; }
 
 .header {
   margin-top: 16px;
@@ -123,10 +138,15 @@ a {
     margin-bottom: 122px; }
 
 .scroll {
-  display: block;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   font-size: 14px;
-  line-height: 1.9; }
+  line-height: 1.9;
+  -webkit-box-shadow: 2px 2px 2px 2px transparent;
+  box-shadow: 2px 2px 2px 2px transparent;
+  border-bottom: 2px solid transparent; }
   .scroll:before {
     -webkit-transform: translateX(-100%) rotate(135deg) translateY(-100%);
     -ms-transform: translateX(-100%) rotate(135deg) translateY(-100%);
@@ -141,8 +161,19 @@ a {
     border-top: 1px solid #ffffff;
     border-right: 1px solid #ffffff;
     bottom: 0; }
-    .scroll:before:hover {
-      border-color: #f9c; }
+  .scroll:focus {
+    border-color: #000; }
+  .scroll:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2); }
+  .scroll:active {
+    -webkit-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    transform: translateY(-3px);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s; }
 
 .nav {
   background-color: #5474fd;
@@ -178,7 +209,12 @@ a {
       -ms-transform: scale(1.1);
       transform: scale(1.1); }
     .logo__link:active {
-      background-color: rgba(255, 255, 255, 0.5); }
+      -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+      transform: translateY(-3px);
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
 
 .main-menu {
   display: -webkit-box;
@@ -214,7 +250,12 @@ a {
       border-color: #d82323;
       color: #d82323; }
     .main-menu__link:active {
-      background-color: rgba(255, 255, 255, 0.5); }
+      -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+      transform: translateY(-3px);
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
 
 .form-search {
   background-color: #ffffff;
@@ -256,7 +297,8 @@ a {
     font-size: 14px;
     text-transform: uppercase;
     -ms-flex-pack: distribute;
-    justify-content: space-around; }
+    justify-content: space-around;
+    letter-spacing: 0.1em; }
 
 .section-choose-us {
   background-image: url("../image/choose-bg.png");
@@ -454,13 +496,19 @@ a {
       margin-right: 0; }
   .social-list__link {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
+    line-height: 26px;
+    text-align: center;
+    vertical-align: middle;
     border-radius: 50%;
     border: solid 1px transparent; }
     .social-list__link:focus {
-      border-color: #ffffff; }
+      border-color: #ffffff;
+      color: #5474fd; }
     .social-list__link:hover {
       color: #5474fd; }
     .social-list__link:active {
-      background-color: rgba(255, 255, 255, 0.5); }
+      -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+      transform: scale(1.3); }
