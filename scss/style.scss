@@ -80,6 +80,7 @@ a {
 
 .btn {
 	display: inline-flex;
+	justify-content: center;
 	font-family: 'Aleo', serif;
 	font-weight: 400;
 	color: $color-text-base;
@@ -93,24 +94,23 @@ a {
 	align-items: center;
 	border: 2px solid transparent;
 	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-	min-width: 225px;
 	text-transform: uppercase;
 	letter-spacing: 0.075em;
+	min-width: 144px;
 
 	&:focus {
 		border-color: #000000;
 	}
 
-	&:hover {
+	&:hover,
+	&:active {
 		color: #5474fd;
-		border-color: #5474fd;
 		background-color: #ffffff;
 		cursor: pointer;
 	}			
 
 	&:active {
-		transform: translateY(-3px);
-		transition: 0.3s;
+		border-color: #5474fd;
 	}
 }
 
@@ -126,13 +126,11 @@ a {
 }
 
 .header {
-	margin-top: 16px;
-	background-color: $color-text-base;
 	background-image: url('../image/header-bg.png');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	min-height: 835px;
+	min-height: 740px;
 	padding-top: 260px;
 	position: relative;
 	text-align: center;
@@ -152,9 +150,7 @@ a {
 		line-height: 1;
 		margin-bottom: 52px;
 	}
-	&__scroll {
-		margin-bottom: 162px;
-	}
+	
 	&__form-search {
 		margin-bottom: 122px;
 	}
@@ -168,29 +164,30 @@ a {
 	font-size: 14px;
 	line-height: 1.9;
 	box-shadow: 2px 2px 2px 2px transparent;
-	border-bottom: 2px solid transparent;
+	border: 2px solid transparent;
+	padding: 18px 24px;
 
 
 	&:before {
 		transform: translateX(-100%) rotate(135deg) translateY(-100%);
 		left: 50%;
+		top: 60%;
 		content: "";
 		display: block;
 		position: absolute;
-		cursor: pointer;
 		width: 8px;
 		height: 8px;
 		border-top: 1px solid $color-text-base;
 		border-right: 1px solid $color-text-base;
 		bottom: 0;
-		}
+	}
 
-		&:focus {
-			border-color: #000;
-		}
+	&:focus {
+		border-color: #000;
+	}
 
-		&:hover {
-			transform: scale(1.2);
+	&:hover {
+		transform: scale(1.2);
 	}
 
 	&:active {
@@ -219,17 +216,17 @@ a {
 }
 .logo {
 	display: block;
-	width: 163px;
 	
 	&__link {
 		display: block;
-		border-bottom: 3px solid transparent;
+		border: 2px solid transparent;
 
 		&:focus {
 			border-color: #000000;
 		}
 
-		&:hover {
+		&:hover,
+		&:active {
 			transform: scale(1.1);
 		}
 
@@ -262,19 +259,19 @@ a {
 		position: relative;
 		text-decoration: none;
 		color: inherit;
-		border-bottom: 3px solid transparent;
+		border: 2px solid transparent;
 
 		&:focus {
 			border-color: #000000;
 		}
 
-		&:hover{
-			border-color: #d82323;
+		&:hover,
+		&:active {
 			color:  #d82323;
 		}
 
 		&:active {
-			transform: translateY(-3px);
+			transform: translateY(-1px);
 			transition: 0.3s;
 		}
 	}
@@ -292,7 +289,7 @@ a {
 }
 
 .search {
-	width: calc(100% - 145px);
+	flex-grow: 1;
 	border: none;
 	height: 100%;
 	padding: 15px;
@@ -306,12 +303,9 @@ a {
 	}
 	
 	&__btn {
-		height: calc(100% - 2px);
-		min-width: 144px;
 		font-size: 14px;
-		text-transform: uppercase;
-		justify-content: space-around;
 		letter-spacing: 0.1em;
+		justify-content: space-around;
 	}
 }
 
@@ -322,10 +316,9 @@ a {
 	background-size: cover;
 	min-height: 685px;
 	padding: 120px 0;
-	position: relative;
 }
 
-.choose-descr {
+.choose-card {
 	padding-top: 80px;
 	&__title {
 		font-family: 'Aleo', serif;
@@ -344,27 +337,26 @@ a {
 	}
 
 	&__btn {
-		min-height: 60px;
 		min-width: 225px;
-		justify-content: center;
 	}
 }
 
-.choose-foto {
+.choose-figure {
 	display: flex;
 	flex-direction: column;
 
 	&__img {
 		display: block;
 		width: 350px;
-	}
 
-	&__img--up {
-		margin-bottom: 5px;
-		margin-left: 80px;
-	}
-	&__img--down {
-		align-self: flex-end;
+
+		&--up {
+			margin-bottom: 5px;
+			margin-left: 80px;
+		}
+		&--down {
+			align-self: flex-end;
+		}
 	}
 }
 
@@ -401,7 +393,7 @@ a {
 		margin-bottom: 20px;
 	}
 
-	&__item-title {
+	&__title {
 		color: #e8e8e8;
 		font-size: 36px;
 		font-family: 'Aleo', serif;
@@ -413,15 +405,11 @@ a {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}
-
-.spain-descr {
 	min-height: 700px;
 	padding-top: 235px;
 }
 
-.spain-card {
-	width: 540px;
+.hotel-card {
 	background-color: rgba(35, 35, 35, 0.9);
 	color: #e8e8e8;
 	font-family: 'Josefin Sans', sans-serif;
@@ -440,7 +428,7 @@ a {
 		margin-bottom: 50px;
 	}
 	&__btn {
-		justify-content: center;
+		min-width: 220px;;
 	}
 }
 
@@ -449,10 +437,7 @@ a {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-}
-
-.empty-place {
-	height: 1px;
+	padding: 230px 0 100px;
 }
 
 .section-reviews {
@@ -465,7 +450,6 @@ a {
 
 	&__title {
 		text-align: center;
-		color: $color-text-base;
 		font-size: 36px;
 		font-family: 'Aleo', serif;
 		font-weight: 1;
@@ -513,7 +497,6 @@ a {
 	background-color: #232323;
 	min-height: 265px;
 	padding: 110px 0 50px;
-	color: $color-text-base;
 	text-align: center;
 	&__logo {
 		margin: 0 auto 10px;
